@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Automation - JAC-RanchiResults" thread-count="5" parallel="tests">
+	<listeners>
+		<listener class-name="com.qa.utility.ReportGenerate" />
+	</listeners>
+
+	<test thread-count="5" name="Functional Testing - JAC Result" parallel="classes" enabled="false">
+		<parameter name="Browser" value="Chrome" />
+		<parameter name="url" value="https://jacresults.com/sec-all/index.php" />
+		<classes>
+			<class name="com.qa.scripts.JAC_10th_ResultSearch" />
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Functional Testing - JAC Result" parallel="classes" enabled="true">
+		<parameter name="Browser" value="Chrome" />
+		<parameter name="url" value="https://jacresults.com/science/index.php" />
+		<classes>
+			<class name="com.qa.scripts.JAC_12th_ResultSearch" />
+		</classes>
+	</test>
+
+</suite>

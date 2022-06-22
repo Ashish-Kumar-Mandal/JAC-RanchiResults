@@ -1,0 +1,9 @@
+/SeleniumDrivers
+/target
+/TestNG
+/Maven Dependencies
+/JRE System Library
+/test-output
+.settings
+.classpath
+.project
