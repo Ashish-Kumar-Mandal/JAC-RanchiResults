@@ -39,7 +39,7 @@ public class JAC_12th_ResultSearch extends BaseScript {
 		File file = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\qa\\testdata\\JAC_12th_Results.xlsx");
 		FileInputStream fis = new FileInputStream(file);
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
-		XSSFSheet sheet = workbook.getSheetAt(0);
+		XSSFSheet sheet = workbook.getSheet("GCG");
 
 		sheet.createRow(i);
 		sheet.getRow(i).createCell(0).setCellValue(jac12.getRollNumber());
@@ -70,7 +70,7 @@ public class JAC_12th_ResultSearch extends BaseScript {
 	@DataProvider
 	public String[][] getData() throws IOException {
 		String xFile = System.getProperty("user.dir") + "\\src\\test\\java\\com\\qa\\testdata\\JAC_12th_RollNumbers.xlsx";
-		String xSheetName = "Sheet1";
+		String xSheetName = "GCG";
 
 		int rowCount = ExcelUtility.getRowCount(xFile, xSheetName);
 		int cellCount = ExcelUtility.getCellCount(xFile, xSheetName, rowCount);
