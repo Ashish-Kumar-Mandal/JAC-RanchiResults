@@ -5,7 +5,7 @@
 		<listener class-name="com.qa.utility.ReportGenerate" />
 	</listeners>
 
-	<test thread-count="5" name="Functional Testing - JAC Result" parallel="classes" enabled="true">
+	<test thread-count="5" name="Functional Testing - JAC Result" parallel="classes" enabled="false">
 		<parameter name="Browser" value="Chrome" />
 		<parameter name="url" value="https://jacresults.com/sec-all/index.php" />
 		<classes>
@@ -18,6 +18,14 @@
 		<parameter name="url" value="https://jacresults.com/science/index.php" />
 		<classes>
 			<class name="com.qa.scripts.JAC_12th_ResultSearch" />
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Functional Testing - JAC Result" parallel="classes" enabled="true">
+		<parameter name="Browser" value="Chrome" />
+		<parameter name="url" value="https://cdn.digialm.com//EForms/configuredHtml/1258/76571/login.html" />
+		<classes>
+			<class name="com.qa.scripts.ISRO_SDSC_Login_Script" />
 		</classes>
 	</test>
 

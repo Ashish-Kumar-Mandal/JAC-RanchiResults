@@ -12,6 +12,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import com.qa.pages.ISRO_SDSC_Login_Page;
 import com.qa.pages.JAC_10th_ResultPage;
 import com.qa.pages.JAC_12th_ResultPage;
 
@@ -24,6 +25,7 @@ public class BaseScript {
 	
 	JAC_10th_ResultPage jac;
 	JAC_12th_ResultPage jac12;
+	ISRO_SDSC_Login_Page isro;
 	
 	@Parameters({"Browser", "url"})
 	@BeforeClass
@@ -45,6 +47,7 @@ public class BaseScript {
 		
 		jac = new JAC_10th_ResultPage(driver);
 		jac12 = new JAC_12th_ResultPage(driver);
+		isro = new ISRO_SDSC_Login_Page(driver);
 	}
 		
 	@AfterClass
