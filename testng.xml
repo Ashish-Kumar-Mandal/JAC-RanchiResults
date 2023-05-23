@@ -5,27 +5,43 @@
 		<listener class-name="com.qa.utility.ReportGenerate" />
 	</listeners>
 
-	<test thread-count="5" name="Functional Testing - JAC Result" parallel="classes" enabled="false">
-		<parameter name="Browser" value="Chrome" />
-		<parameter name="url" value="https://jacresults.com/sec-all/index.php" />
+	<test thread-count="5" name="Functional Testing - JAC 10th Result" parallel="classes" enabled="true">
+		<parameter name="Browser" value="Edge" />
+		<parameter name="url" value="http://jacresults.com/sec-all/index.php" />
+		<parameter name="rollCode" value="22015" />
+		<parameter name="rollNumber" value="0001" />
 		<classes>
 			<class name="com.qa.scripts.JAC_10th_ResultSearch" />
 		</classes>
 	</test>
 
-	<test thread-count="5" name="Functional Testing - JAC Result" parallel="classes" enabled="false">
-		<parameter name="Browser" value="Chrome" />
+	<test thread-count="5" name="Functional Testing - JAC 12th Science Result" parallel="classes" enabled="false">
+		<parameter name="Browser" value="Edge" />
 		<parameter name="url" value="https://jacresults.com/science/index.php" />
+		<parameter name="rollCode" value="22005" />
+		<parameter name="rollNumber" value="10001" />
 		<classes>
 			<class name="com.qa.scripts.JAC_12th_ResultSearch" />
 		</classes>
 	</test>
 
-	<test thread-count="5" name="Functional Testing - JAC Result" parallel="classes" enabled="true">
-		<parameter name="Browser" value="Chrome" />
-		<parameter name="url" value="https://cdn.digialm.com//EForms/configuredHtml/1258/76571/login.html" />
+	<test thread-count="5" name="Functional Testing - JAC12th Arts Result" parallel="classes" enabled="false">
+		<parameter name="Browser" value="Edge" />
+		<parameter name="url" value="https://www.jacresults.com/arts/show_result.php" />
+		<parameter name="rollCode" value="22005" />
+		<parameter name="rollNumber" value="30001" />
 		<classes>
-			<class name="com.qa.scripts.ISRO_SDSC_Login_Script" />
+			<class name="com.qa.scripts.JAC_12th_ResultSearch" />
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Functional Testing - JAC12th Commerce Result" parallel="classes" enabled="false">
+		<parameter name="Browser" value="Edge" />
+		<parameter name="url" value="https://www.jacresults.com/commerce/index.php" />
+		<parameter name="rollCode" value="22005" />
+		<parameter name="rollNumber" value="20001" />
+		<classes>
+			<class name="com.qa.scripts.JAC_12th_ResultSearch" />
 		</classes>
 	</test>
 

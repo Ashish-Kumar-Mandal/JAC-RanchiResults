@@ -12,29 +12,30 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-import com.qa.pages.ISRO_SDSC_Login_Page;
 import com.qa.pages.JAC_10th_ResultPage;
 import com.qa.pages.JAC_12th_ResultPage;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseScript {
+	
+	String rollCode;
+	String rollNumber;
 
-	WebDriver driver;
+	static WebDriver driver;
 	FileInputStream fileLoc;
 	
 	JAC_10th_ResultPage jac;
 	JAC_12th_ResultPage jac12;
-	ISRO_SDSC_Login_Page isro;
 	
-	@Parameters({"Browser", "url"})
+	@Parameters({"Browser", "url", "rollCode", "rollNumber"})
 	@BeforeClass
-	public void setUp(String Browser, String url) throws IOException {	
+	public void setUp(String Browser, String url, String rollCode, String rollNumber) throws IOException, InterruptedException {	
+		this.rollCode = rollCode;
+		this.rollNumber = rollNumber;
 		
 		if(Browser.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions opt = new ChromeOptions();
-			opt.addArguments("--disable-notifications");
 			driver = new ChromeDriver(opt);			
 		}else if(Browser.equalsIgnoreCase("Edge")) {
 			WebDriverManager.edgedriver().setup();
@@ -43,11 +44,12 @@ public class BaseScript {
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get(url);		
+		driver.get(url);
 		
 		jac = new JAC_10th_ResultPage(driver);
 		jac12 = new JAC_12th_ResultPage(driver);
-		isro = new ISRO_SDSC_Login_Page(driver);
+				 
+		Thread.sleep(1000);
 	}
 		
 	@AfterClass
